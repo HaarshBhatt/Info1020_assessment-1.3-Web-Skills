@@ -27,7 +27,13 @@
 
       body {
         background-color: var(--c-background-color);
+        max-width: 800px;
       }
+      
+      article h2,
+      article h3 {
+          padding-top: 50px;
+      } 
 
       header,
       footer {
@@ -68,6 +74,18 @@
         display: flex;
         justify-content: space-around;
         text-align: center;
+      }
+
+      aside {
+        color: var(--c-green);
+      }
+
+      aside a {
+        color: var(--c-red);
+      }
+
+      aside a:hover {
+        color: var(--c-blue);
       }
 
     </style>
