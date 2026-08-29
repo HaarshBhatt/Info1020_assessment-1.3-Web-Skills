@@ -1,51 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Australian Birds</title>
-    </head>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Australian Birds</title>
+    <style>
+        :root {
+            --primary-color: rgb(255, 255, 255);
+            --secondary-color: rgb(230, 230, 230);
+            --bg-color: rgb(250, 250, 250);
+            --font-color: rgb(30, 30, 30);
+            --heading-color: rgb(20, 60, 120);
+        }
+
+        [data-theme="dark"] {
+            --primary-color: rgb(30, 30, 30);
+            --secondary-color: rgb(50, 50, 50);
+            --bg-color: rgb(20, 20, 20);
+            --font-color: rgb(220, 220, 220);
+            --heading-color: rgb(100, 150, 200);
+        }
+    </style>
+</head>
+
 
 <body>
-<main>  
-    <h1>Australian Birds</h1>
+    <main>
+        <h1>Australian Birds</h1>
 
-    <img src="http://www.outgrabe.net/bird00.jpg" alt="Pardalote">
-    <p>Pardalote by fir0002 (CC-by-NC)</p>
+        <img src="http://www.outgrabe.net/bird00.jpg" alt="Pardalote">
+        <p>Pardalote by fir0002 (CC-by-NC)</p>
 
-    <button data-bird="0">Pardalote</button>
-    <button data-bird="1">Purple Swamp Hen</button>
-    <button data-bird="2">White-headed Stilt</button>
-    <button data-bird="3">Inland Thornbill</button>
-    <button data-bird="4">Rose Robin</button>
+        <button data-bird="0">Pardalote</button>
+        <button data-bird="1">Purple Swamp Hen</button>
+        <button data-bird="2">White-headed Stilt</button>
+        <button data-bird="3">Inland Thornbill</button>
+        <button data-bird="4">Rose Robin</button>
 
-    <button id="theme-toggle">Toggle Theme</button>
-</main>
+        <button id="theme-toggle">Toggle Theme</button>
+    </main>
 
-<script>
-    const birds = [
-        {src: "http://www.outgrabe.net/bird00.jpg", text: "Pardalote by fir0002 (CC-by-NC)"},
-        {src: "http://www.outgrabe.net/bird01.jpg", text:"Purple swamp hen by Toby Hudson (CC-by-SA)"},
-        {src:"http://www.outgrabe.net/bird02.jpg", text: "White-headed Stilt by JJ Harrison (CC-by-SA)"},
-        {src:"http://www.outgrabe.net/bird03.jpg", text:"Inland Thornbill by Peter Jacobs (CC-by-SA)"},
-        {src:"http://www.outgrabe.net/bird04.jpg", text:"Rose Robin by JJ Harrison (CC-by-SA)"}
-    ];
+    <script>
+        const birds = [
+            { src: "http://www.outgrabe.net/bird00.jpg", text: "Pardalote by fir0002 (CC-by-NC)" },
+            { src: "http://www.outgrabe.net/bird01.jpg", text: "Purple swamp hen by Toby Hudson (CC-by-SA)" },
+            { src: "http://www.outgrabe.net/bird02.jpg", text: "White-headed Stilt by JJ Harrison (CC-by-SA)" },
+            { src: "http://www.outgrabe.net/bird03.jpg", text: "Inland Thornbill by Peter Jacobs (CC-by-SA)" },
+            { src: "http://www.outgrabe.net/bird04.jpg", text: "Rose Robin by JJ Harrison (CC-by-SA)" }
+        ];
 
-    const birdImage = document.querySelector("img");
-    const birdText = document.querySelector("p");
+        const birdImage = document.querySelector("img");
+        const birdText = document.querySelector("p");
 
-    const birdButtons = document.querySelectorAll("button[data-bird]");
+        const birdButtons = document.querySelectorAll("button[data-bird]");
 
-    birdButtons.forEach(function (button) {
-        button.addEventListener("click", function (){
-            const birdIndex = button.getAttribute("data-bird");
-            birdImage.src = birds[birdIndex].src;
-            birdText.textContent = birds[birdIndex].text;
+        birdButtons.forEach(function (button) {
+            button.addEventListener("click", function () {
+                const birdIndex = button.getAttribute("data-bird");
+                birdImage.src = birds[birdIndex].src;
+                birdText.textContent = birds[birdIndex].text;
+            });
         });
-    });
 
-
-</script>
+    </script>
 
 </body>
 
-<html>
+</html>
