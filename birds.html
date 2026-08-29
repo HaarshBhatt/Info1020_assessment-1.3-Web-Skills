@@ -6,20 +6,41 @@
     <title>Australian Birds</title>
     <style>
         :root {
-            --primary-color: rgb(255, 255, 255);
-            --secondary-color: rgb(230, 230, 230);
-            --bg-color: rgb(250, 250, 250);
-            --font-color: rgb(30, 30, 30);
-            --heading-color: rgb(20, 60, 120);
+            --primary-color: rgb(122, 148, 106);
+            --secondary-color: rgb(88, 110, 78);
+            --bg-color: rgb(238, 240, 230);
+            --font-color: rgb(38, 45, 35);
+            --heading-color: rgb(72, 92, 62);
         }
 
         [data-theme="dark"] {
-            --primary-color: rgb(30, 30, 30);
-            --secondary-color: rgb(50, 50, 50);
-            --bg-color: rgb(20, 20, 20);
-            --font-color: rgb(220, 220, 220);
-            --heading-color: rgb(100, 150, 200);
+            --primary-color: rgb(140, 168, 122);
+            --secondary-color: rgb(180, 200, 160);
+            --bg-color: rgb(28, 34, 28);
+            --font-color: rgb(222, 230, 214);
+            --heading-color: rgb(160, 190, 140);
         }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--font-color);
+        }
+
+        h1 {
+            color: var(--heading-color);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: var(--font-color);
+            border: 2px solid var(--secondary-color);
+            padding: 8px 16px;
+        }
+
+        button:hover {
+            background-color: var(--secondary-color);
+        }
+
     </style>
 </head>
 
@@ -60,6 +81,17 @@
                 birdImage.src = birds[birdIndex].src;
                 birdText.textContent = birds[birdIndex].text;
             });
+        });
+
+        const themetoggle = document.querySelector("#theme-toggle");
+        themetoggle.addEventListener("click", function () {
+            const currentTheme = document.documentElement.getAttribute("data-theme");
+
+            if (currentTheme === "dark") {
+                document.documentElement.setAttribute("data-theme", "light");
+            } else {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
         });
 
     </script>
