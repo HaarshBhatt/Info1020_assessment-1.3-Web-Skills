@@ -5,7 +5,7 @@
         <title>Australian Birds</title>
     </head>
 
-    <body>
+<body>
 <main>  
     <h1>Australian Birds</h1>
 
@@ -21,6 +21,31 @@
     <button id="theme-toggle">Toggle Theme</button>
 </main>
 
-    </body>
+<script>
+    const birds = [
+        {src: "http://www.outgrabe.net/bird00.jpg", text: "Pardalote by fir0002 (CC-by-NC)"},
+        {src: "http://www.outgrabe.net/bird01.jpg", text:"Purple swamp hen by Toby Hudson (CC-by-SA)"},
+        {src:"http://www.outgrabe.net/bird02.jpg", text: "White-headed Stilt by JJ Harrison (CC-by-SA)"},
+        {src:"http://www.outgrabe.net/bird03.jpg", text:"Inland Thornbill by Peter Jacobs (CC-by-SA)"},
+        {src:"http://www.outgrabe.net/bird04.jpg", text:"Rose Robin by JJ Harrison (CC-by-SA)"}
+    ];
+
+    const birdImage = document.querySelector("img");
+    const birdText = document.querySelector("p");
+
+    const birdButtons = document.querySelectorAll("button[data-bird]");
+
+    birdButtons.forEach(function (button) {
+        button.addEventListener("click", function (){
+            const birdIndex = button.getAttribute("data-bird");
+            birdImage.src = birds[birdIndex].src;
+            birdText.textContent = birds[birdIndex].text;
+        });
+    });
+
+
+</script>
+
+</body>
 
 <html>
